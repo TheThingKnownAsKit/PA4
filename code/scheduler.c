@@ -198,6 +198,8 @@ void timer_handler()
  */
 void setup_sig_handlers() {
 
+	struct sigaction sa_alrm, sa_term, sa_usr1; // this just makes my life easier
+
 	/* Setup timer handler for SIGALRM signal in scheduler */
 	memset(&sa_alrm, 0, sizeof(sa_alrm));
 	sa_alrm.sa_handler = timer_handler;
